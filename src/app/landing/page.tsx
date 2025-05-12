@@ -3,7 +3,7 @@ import React, { useState, ChangeEvent } from 'react';
 import Image from 'next/image';
 import { Shield, AlertTriangle, Heart, CheckCircle } from 'lucide-react';
 import Header from '@/components/sections/Header';
-
+import Footer from '@/components/sections/Footer';
 const SafetyLandingPage = () => {
   const [subscribeEmail, setSubscribeEmail] = useState<string>('');
   const [isSubscribed, setIsSubscribed] = useState<boolean>(false);
@@ -30,14 +30,14 @@ const SafetyLandingPage = () => {
           Your Safety, Our Priority
         </h2>
         <p className="text-xl mb-8 text-gray-700 max-w-2xl mx-auto">
-          Comprehensive safety solutions designed to protect what matters most.
+        At Shield-Her, we prioritize your safety through innovative tools and confidence-driven self-defense solutions.
         </p>
         <div className="flex justify-center space-x-4">
           <a 
             href="/main" 
-            className="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition"
+            className="bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition text-2xl font-bold"
           >
-            Shield Her Safety
+            Shield-Her
           </a>
         </div>
       </header>
@@ -111,16 +111,8 @@ const SafetyLandingPage = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-fuchsia-500 text-white py-8">
-        <div className="container mx-auto px-6 text-center">
-          <p>&copy; 2025 SafeGuard. All Rights Reserved.</p>
-          <div className="mt-4 space-x-4">
-            <a href="#privacy" className="hover:text-pink-200">Privacy Policy</a>
-            <a href="#terms" className="hover:text-pink-200">Terms of Service</a>
-          </div>
-        </div>
-      </footer>
+     <Footer />
+
     </div>
   );
 };

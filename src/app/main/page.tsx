@@ -67,7 +67,7 @@ export default function Home() {
       <AlertBar alert={alertState} />
       <SideNotification isVisible={showSideNotification} />
       <main className="flex min-h-screen flex-col items-center justify-center p-6 pt-20">
-        <h1 className="text-4xl font-bold mb-4 text-center text-primary">SafeZone</h1>
+        <h1 className="mb-4 text-center text-5xl font-extrabold mb-4 text-fuchsia-700">SafeZone</h1>
 
         <div className="mb-6 flex items-center justify-center space-x-2 text-muted-foreground">
            {isLoading ? (
@@ -127,7 +127,7 @@ export default function Home() {
                 <p className="text-green-600 dark:text-green-400 text-center font-medium">Area clear. Stay safe!</p>
              )}
 
-            <GunshotButton
+            <GunshotButton 
               onSimulate={simulateGunshot}
               disabled={!currentLocation}
               aria-label="Simulate Gunshot Event at Current Location"

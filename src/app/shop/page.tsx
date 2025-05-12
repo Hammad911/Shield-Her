@@ -9,7 +9,9 @@ import {
   Zap,
   Watch,
   Compass,
-  Headphones
+  Headphones,
+  BookOpen,
+  Monitor
 } from 'lucide-react';
 import Header from '@/components/sections/Header';
 import Footer from '@/components/sections/Footer';
@@ -27,64 +29,62 @@ interface SafetyProduct {
 
 interface CartItem extends SafetyProduct {
   quantity: number;
-}
-
-const safetyProducts: SafetyProduct[] = [
+}const safetyProducts: SafetyProduct[] = [
   {
     id: 1,
-    name: "Guardian Beacon",
-    category: "Personal Alarm",
-    description: "Advanced personal safety device with AI-powered threat detection",
-    price: 129.99,
+    name: "ShieldHer Taser Gun",
+    category: "Personal Defense",
+    description: "Non-lethal taser designed for women's safety and quick protection.",
+    price: 5000,
     features: [
-      "AI-powered threat analysis",
-      "360° environmental scanning",
-      "Instant emergency alerts",
-      "Long-lasting battery"
+      "Fingerprint lock",
+      "High-voltage shock",
+      "Compact, purse-friendly",
+      "SOS alert sync"
     ],
     icon: Zap
   },
   {
     id: 2,
-    name: "SafeTrack Pro",
-    category: "GPS Tracker",
-    description: "Cutting-edge location monitoring with real-time safety insights",
-    price: 199.99,
+    name: "Urban Escape",
+    category: "Self-Defense Program",
+    description: "Learn real-world street defense and escape tactics.",
+    price: 2000,
     features: [
-      "Precision GPS tracking",
-      "Emergency SOS communication",
-      "Geofencing capabilities",
-      "Encrypted data transmission"
+      "Quick grab escape moves",
+      "Risk awareness tips",
+      "Female instructors",
+      "Safety checklist"
     ],
-    icon: Compass
+    icon: BookOpen
   },
   {
     id: 3,
-    name: "Connect Guardian",
-    category: "Wearable Safety Tech",
-    description: "Intelligent safety companion seamlessly integrated into your lifestyle",
-    price: 249.99,
+    name: "Mind & Muscle",
+    category: "Self-Defense Program",
+    description: "Build both self-defense skills and mental strength.",
+    price: 2000,
     features: [
-      "Biometric health monitoring",
-      "Emergency contact integration",
-      "Voice-activated safety features",
-      "Sleek, minimalist design"
+      "Assertive body language",
+      "Fear control techniques",
+      "Physical drills",
+      "Coaching forum"
     ],
     icon: Watch
   },
   {
     id: 4,
-    name: "Silent Sentinel",
-    category: "Personal Communication",
-    description: "Discreet safety communication system with advanced privacy features",
-    price: 159.99,
+    name: "Click-to-Fight",
+    category: "Online Program",
+    description: "Train in self-defense anytime with this online course.",
+    price: 1000,
     features: [
-      "Encrypted communication",
-      "One-touch emergency calling",
-      "Noise-canceling technology",
-      "Compact wireless design"
+      "Video tutorials",
+      "Interactive simulations",
+      "Mobile-friendly",
+      "Certificate included"
     ],
-    icon: Headphones
+    icon: Monitor
   }
 ];
 
@@ -150,7 +150,7 @@ const ModernSafetyWebsite = () => {
           {['Home', 'Products', 'Features', 'About'].map((item) => (
             <a
               key={item.toLowerCase()}
-              href={`#${item.toLowerCase()}`}
+              href={`#Rs. {item.toLowerCase()}`}
               className="block px-4 py-3 text-center hover:bg-fuchsia-600 transition text-white"
               onClick={() => setIsMobileMenuOpen(false)}
             >
@@ -168,11 +168,12 @@ const ModernSafetyWebsite = () => {
         <div className="absolute inset-0 bg-gradient-to-br from-blue-100 to-green-100 opacity-60"></div>
         <div className="relative z-10 max-w-3xl">
           <h2 className="text-5xl md:text-6xl font-bold mb-6 text-gray-800">
-            Intelligent Safety <span className="text-fuchsia-600">Reimagined</span>
+          Designed for Her Safety <span className="text-fuchsia-600">Powered by Purpose
+          </span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-700 mb-10">
-            Cutting-edge technology that empowers your personal safety with intelligent,
-            proactive protection solutions.
+          Empowering women with smart, stylish tools to stay safe, confident, and in control—anytime, anywhere.
+
           </p>
           <div className="flex justify-center space-x-4">
             <a
@@ -192,11 +193,11 @@ const ModernSafetyWebsite = () => {
       >
         <div className="text-center mb-12">
           <h3 className="text-4xl font-bold mb-4 text-gray-800">
-            Our Advanced Safety Solutions
+          Our Next-Gen Safety Solutions
+
           </h3>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-            Innovative devices designed to provide comprehensive personal protection
-            through intelligent technology.
+          Innovative self-defense products and programs made to protect, train, and uplift women on their terms.
           </p>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -233,7 +234,7 @@ const ModernSafetyWebsite = () => {
                   </ul>
                   <div className="flex justify-between items-center">
                     <span className="text-2xl font-bold text-gray-800">
-                      ${product.price.toFixed(2)}
+                      Rs.{product.price}
                     </span>
                     <button
                       onClick={() => addToCart(product)}

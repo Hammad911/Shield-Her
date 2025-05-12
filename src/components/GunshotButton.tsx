@@ -14,7 +14,7 @@ export function GunshotButton({ onSimulate, disabled = false }: GunshotButtonPro
       onClick={onSimulate}
       disabled={disabled}
       size="lg" // Make the button large
-      className="mt-8 w-full max-w-xs mx-auto text-lg font-bold shadow-lg" // Centered, large text, shadow
+      className="mt-8 w-full max-w-xs mx-auto text-lg font-bold shadow-lg bg-pink-500 text-white px-6 py-3 rounded-full hover:bg-pink-600 transition" // Centered, large text, shadow
       aria-label="Simulate Gunshot Event"
     >
       <Target className="mr-2 h-6 w-6" aria-hidden="true" /> {/* Larger icon */}
